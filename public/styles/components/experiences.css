@@ -1,0 +1,54 @@
+#experiences h2 {
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.experiences-container{
+  display: grid;
+  gap: 20px;
+  padding: 28px;
+  margin-bottom: 50px;
+}
+.experiences-container p{
+  font-weight: 400;
+  text-align: start;
+  line-height: 1.5;
+  margin: 0
+}
+.cases-left{
+  display: flex;
+  flex-direction: column;
+}
+.cases-left h3{
+  margin: 0;
+}
+.cases-right{
+  display: flex;
+  flex-direction: column;
+}
+.cases-right p{
+  font-weight: 200;
+}
+.cases{
+    display: flex;
+  justify-content: space-between;
+}
+.description{
+  letter-spacing: 0.03em;
+  width: 100%;
+}
+
+
+.tools{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.span-tools {
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--btn-color);
+  border: solid 1px rgba(0, 0, 0, 0.081) ;
+  border-radius: 5px;
+  padding: 3px 5px;
+}
+

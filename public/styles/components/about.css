@@ -1,0 +1,89 @@
+.ABOUT h2{
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.ABOUT p{
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    text-align: start;
+    line-height: 1.5;
+}
+#ABOUT-SDU{
+    font-weight: 600;
+    text-decoration: underline;
+}
+.ABOUT-facts-about-me{
+    margin: 40px 0;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: var(--facts-about-me);
+    transition: background 0.2s ease;
+}
+.ABOUT-facts-about-me summary{
+    user-select: none;
+    list-style: none;         
+    cursor: pointer;
+    width: 100%; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ABOUT-facts-about-me:hover {
+    background: var(--facts-about-me-hover);
+}
+.ABOUT-facts-about-me .wrapper p {
+    margin: 8px 0;
+}
+.ABOUT-facts-about-me .wrapper {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    user-select: none;
+    transform: translateY(-6px);
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* when details is open */
+.ABOUT-facts-about-me[open] .wrapper {
+    max-height: 300px; /* больше, чем контент */
+    opacity: 1;
+    transform: translateY(0);
+}
+.ABOUT-facts-about-me.closing .wrapper {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-1px);
+}
+
+/* custom arrow */
+.ABOUT-facts-about-me summary::after {
+    content: "‹";
+    transform: rotate(270deg);
+    font-size: 1.2rem;
+    transition: transform 0.25s ease;
+    pointer-events: none;
+  }
+  
+  /* rotate arrow when open */
+.ABOUT-facts-about-me[open] summary::after {
+    transform: rotate(90deg);
+}
+.ABOUT-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#ABOUT-bottom-inst-logo img{
+    width: 30px;
+    height: 30px;
+    display: block;
+}

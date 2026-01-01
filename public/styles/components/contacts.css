@@ -1,0 +1,71 @@
+#contacts h2{
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+#contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.socialNetworks{
+    display: flex;
+    justify-content: space-evenly;
+}
+.socialNetworks-elements{
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.socialNetworks-logo{
+    height: 15px;
+    width: 15px;
+}
+#socialNetworks-element1 img{
+    filter: invert(1);
+}
+.dark #socialNetworks-element1{
+    color: var(--black);
+}
+#socialNetworks-element1{
+    background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+    color: var(--white);
+}
+#socialNetworks-element2 img{
+    filter: invert(1);
+}
+.dark #socialNetworks-element2{
+    color: var(--black);
+}
+#socialNetworks-element2{
+    background-color: #e53e3e;
+    color: var(--white);
+}
+#socialNetworks-element3 img{
+    filter: invert(1);
+}
+.dark #socialNetworks-element3{
+    color: var(--black);
+}
+#socialNetworks-element3{
+    background-color: #01a0dc;
+    color: var(--white);
+}
+#socialNetworks-element4 img{
+    filter: invert(1);
+}
+.dark #socialNetworks-element4 img{
+    filter: invert(0);
+}
+#socialNetworks-element4{
+    background-color: var(--black);
+    color: var(--white);
+}
