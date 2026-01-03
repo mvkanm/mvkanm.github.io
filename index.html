@@ -11,81 +11,206 @@
     <script type="module" src="./public/js/typewriter.js"></script>
     <script type="module" src="./public/js/smooth-wrapper.js"></script>
     <script type="module" src="./public/js/burger-menu.js"></script>
+    <link rel="stylesheet" href="./public/styles/tailwind.css">
     <title>Mukanius</title>
+    <style>@keyframes blink {
+        0%, 40% { opacity: 1; }
+        60%, 100% { opacity: 0; }
+      }</style>
 </head>
-<body>
+<body class="bg-white text-black dark:bg-black dark:text-white">
     <!-- Navbar -->
-    <div class="navbar">
-        <div class="navbar-left">
-            <a href="#intro"><img id="navbar-logo" src="./public/img/mvKanHorizLogo.png" alt=""></a>
-        </div>
-        <div id="nav" class="navbar-center">
-            <a href="#about">ABOUT</a>
-            <a href="#experiences">EXPERIENCES</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#contacts">CONTACTS</a>
-        </div>
-        <div class="navbar-right">
-            <button id="dark-light-theme-button"><img id="navbar-right-img" src="./public/img/moon.png" alt=""></button>
-        </div>    
+    <div class="fixed top-0 left-0 z-[667] w-full
+        bg-light-lightNavbar border-b
+        dark:bg-dark-darkNavbar
+        dark:border-dark-darkNavbarBorder">
+
+    <!-- Navbar content wrapper -->
+    <div class="h-20 max-w-screen-xl mx-auto
+            px-4 sm:px-6
+            flex items-center justify-between">
+
+    <!-- Left -->
+    <div class="navbar-left">
+        <a href="#intro">
+        <img
+            class="h-20 w-auto block dark:invert transition-[filter] duration-300 ease-in-out"
+            id="navbar-logo"
+            src="./public/img/mvKanHorizLogo.png"
+            alt="">
+        </a>
     </div>
+
+    <!-- Center -->
+    <div id="nav" class="navbar-center hidden md:flex items-center justify-evenly gap-12">
+        <a href="#about" class="dark:text-dark-darkLinks">ABOUT</a>
+        <a href="#experiences" class="dark:text-dark-darkLinks">EXPERIENCES</a>
+        <a href="#projects" class="dark:text-dark-darkLinks">PROJECTS</a>
+        <a href="#contacts" class="dark:text-dark-darkLinks">CONTACTS</a>
+    </div>
+
+    <!-- Right -->
+    <div class="navbar-right flex items-center gap-4">
+        <!-- Theme button -->
+        <button class="theme-toggle hidden md:flex items-center justify-center
+                w-8 h-8 rounded-lg border
+                border-light-lightBorder
+                bg-light-lightBtnColor
+                dark:bg-dark-darkBtnColor
+                dark:border-dark-darkBorder" >
+        <img class="h-3.5 dark:hidden" src="./public/img/moon.png" alt="">
+        <img class="h-3.5 hidden dark:block invert scale-[0.85]" src="./public/img/sun.png" alt="">
+        </button>
+        <!-- Burger -->
+        <button id="burger-btn" class="md:hidden flex flex-col gap-1 relative z-[668]">
+            <span id="bar-top" class="h-0.5 w-6 bg-black dark:bg-white transition-all duration-300"></span>
+            <span id="bar-mid" class="h-0.5 w-6 bg-black dark:bg-white transition-all duration-300"></span>
+            <span id="bar-bot" class="h-0.5 w-6 bg-black dark:bg-white transition-all duration-300"></span>
+        </button>
+    </div>
+    </div>
+</div>
+<div
+  id="mobile-menu"
+  class="fixed top-20 left-0 w-full
+         bg-light-lightNavbar dark:bg-dark-darkNavbar
+         z-[666]
+         origin-top
+         scale-y-0 opacity-0
+         transition-all duration-300 ease-out
+         md:hidden">
+
+  <div class="max-w-screen-xl mx-auto px-6 py-6 flex items-center flex-col gap-6">
+    <a href="#about" class="dark:text-dark-darkLinks">ABOUT</a>
+    <a href="#experiences" class="dark:text-dark-darkLinks">EXPERIENCES</a>
+    <a href="#projects" class="dark:text-dark-darkLinks">PROJECTS</a>
+    <a href="#contacts" class="dark:text-dark-darkLinks">CONTACTS</a>
+    <button class="theme-toggle flex md:flex items-center justify-center
+                w-8 h-8 rounded-lg border
+                border-light-lightBorder
+                bg-light-lightBtnColor
+                dark:bg-dark-darkBtnColor
+                dark:border-dark-darkBorder">
+        <img class="h-3.5 dark:hidden" src="./public/img/moon.png" alt="">
+        <img class="h-3.5 hidden dark:block invert scale-[0.85]" src="./public/img/sun.png" alt="">
+    </button>
+    </div>
+</div>
+
     <!-- Main -->
-    <main>
+    <main class="pt-20 bg-white dark:bg-black">
         <!-- intro/hero page(1st page) -->
-        <section id="intro" class="intro">
-            <div class="typewriter">
-                <h1 id="intro-greeting">Hello!</h1><span class="cursor">|</span>
+        <section id="intro" class="intro
+        py-[120px] px-8 sm:px-8 md:px-[15%] lg:px-[25%] min-h-[calc(100vh-80px)]
+        flex flex-col items-center justify-center
+        text-center 
+       ">
+            <div class="typewriter flex items-baseline justify-center">
+                <h1 class="text-[clamp(40px,8vw,72px)] leading-none font-semibold dark:text-dark-darkText" id="intro-greeting">Hello!</h1><span class="cursor ml-1 font-semibold
+                text-[clamp(40px,8vw,72px)]
+                leading-none
+                text-light-lightText 
+                dark:text-dark-darkText
+                animate-[blink_1.2s_ease-in-out_infinite]">|</span>
             </div>
-            <h3 id="intro-description">I'm <b>Miras</b>, a freshman developer
+            <h3 class="mt-12
+            text-[clamp(16px,4vw,24px)]
+            max-w-[45ch]
+            text-center dark:text-dark-darkText" id="intro-description">I'm <b>Miras</b>, a freshman developer
                 interested in clean code, modern interfaces, and continuous learning.</h3>
         </section>
         <!-- about -->
-        <section id="about" class="ABOUT">
-            <h2>ABOUT</h2>
-            <hr>
-            <p>Currently, I'm studying information technology at <a id="ABOUT-SDU"href="https://sdu.edu.kz/">SDU</a> and focusing on web development.
+        <section id="about" class="ABOUT py-[60px] scroll-mt-20 px-8 sm:px-8 md:px-[15%] lg:px-[25%]">
+            <h2 class="dark:text-dark-darkText">ABOUT</h2>
+            <hr class="mt-6 mb-6 mx-auto w-4/5 h-px border-0 bg-light-lightBorder dark:bg-dark-darkBorder">
+            <p class="text-light-lightText dark:text-dark-darkText">Currently, I'm studying information technology at <a id="ABOUT-SDU"href="https://sdu.edu.kz/" class="underline font-semibold">SDU</a> and focusing on web development.
 
             </p>
-            <p> I enjoy building small projects, improving my skills step by step, and understanding 
+            <p class="text-light-lightText dark:text-dark-darkText"> I enjoy building small projects, improving my skills step by step, and understanding 
                 how clean interfaces and good design come together.
             </p>
-            <p>My goals include gaining real-world experience through internships, creating meaningful 
+            <p class="text-light-lightText dark:text-dark-darkText">My goals include gaining real-world experience through internships, creating meaningful 
                 personal projects, and collaborating with others to grow as a developer.
             </p>
-            <details class="ABOUT-facts-about-me">
-                <summary>Facts about me</summary>
-                <div class="wrapper">
-                    <p>&#8226;  
+            <details class="ABOUT-facts-about-me mt-10 w-full cursor-pointer p-2 border border-black/10 rounded-lg dark:bg-dark-darkFactsAboutMe ">
+                <summary class="select-none list-none cursor-pointer w-full text-lg text-light-lightText dark:text-dark-darkText font-semibold flex items-center justify-between px-2">Facts about me</summary>
+                <div class="wrapper m-2">
+                    <p class="tracking-[0.03em] m-2 font-normal text-start leading-[1.5] text-light-lightText dark:text-dark-darkText">&#8226;  
                     I've spent 39,000 minutes listening to Kendrick Lamar and Kanye West in 2025.</p>
-                    <p>&#8226;
+                    <p class="tracking-[0.03em] m-2 font-normal text-start leading-[1.5] text-light-lightText dark:text-dark-darkText">&#8226;
                     In childhood, I dreamed of becoming a neurosurgeon before discovering IT.</p>
-                    <p>&#8226;
+                    <p class="tracking-[0.03em] m-2 font-normal text-start leading-[1.5] text-light-lightText dark:text-dark-darkText">&#8226;
                     I'm not a fan of fantasy films, I prefer historical movies and biopics.</p>
                     </div>
             </details>
         </section>
         <!-- experiences -->
-        <section id="experiences">
-            <h2>EXPERIENCES<hr></h2>
+        <section id="experiences" class="py-[60px] scroll-mt-20 px-4 sm:px-8 md:px-[15%] lg:px-[25%]">
+            <h2 class="dark:text-dark-darkText">EXPERIENCES</h2>
+            <hr class="mt-6 mb-6 mx-auto w-4/5 h-px border-0 bg-light-lightBorder dark:bg-dark-darkBorder">
         </section>
         <!-- projects -->
-        <section id="projects">
-            <h2>PROJECTS<hr></h2>
+        <section id="projects" class="py-[60px] scroll-mt-20 px-8 sm:px-8 md:px-[15%] lg:px-[25%]">
+            <h2 class="dark:text-dark-darkText">PROJECTS</h2>
+            <hr class="mt-6 mb-6 mx-auto w-4/5 h-px border-0 bg-light-lightBorder dark:bg-dark-darkBorder">
         </section>
         <!-- contacts -->
-         <section id="contacts">
-            <h2>CONTACTS<hr></h2>
-            <div class="socialNetworks">
-                <a href="" class="socialNetworks-elements" id="socialNetworks-element1">
+        <section id="contacts" class="py-[60px] scroll-mt-20 px-4 sm:px-8 md:px-[15%] lg:px-[25%]">
+            <h2 class="dark:text-dark-darkText text-center md:text-left">CONTACTS</h2>
+        
+            <hr class="mt-6 mb-6 mx-auto w-4/5 h-px border-0 bg-light-lightBorder dark:bg-dark-darkBorder">
+        
+            <div class="socialNetworks
+                        flex flex-col items-center gap-4
+                        md:flex-row md:items-start md:justify-between">
+        
+                <a href="https://www.instagram.com/mvkanm/"
+                   class="socialNetworks-elements
+                          w-full max-w-xs
+                          flex items-center justify-center gap-2
+                          md:w-auto md:justify-start"
+                   id="socialNetworks-element1">
                     <img class="socialNetworks-logo" src="./public/img/instagram.png" alt="">
-                    Instagram</a>
-                <a href="" class="socialNetworks-elements" id="socialNetworks-element2"><img class="socialNetworks-logo"src="./public/img/email.png" alt="">Gmail</a>
-                <a href="" class="socialNetworks-elements" id="socialNetworks-element3"><img class="socialNetworks-logo"src="./public/img/linkedin.png" alt="">LinkedIn</a>
-                <a href="" class="socialNetworks-elements" id="socialNetworks-element4"><img class="socialNetworks-logo"src="./public/img/github.png" alt="">GitHub</a>
+                    Instagram
+                </a>
+        
+                <a href="mailto:mvkanmiras@gmail.com
+                        ?subject=Portfolio%20Inquiry
+                        &body=Hi%20Miras,%0A%0AI%20found%20your%20portfolio..."
+                   class="socialNetworks-elements
+                          w-full max-w-xs
+                          flex items-center justify-center gap-2
+                          md:w-auto md:justify-start"
+                   id="socialNetworks-element2">
+                    <img class="socialNetworks-logo" src="./public/img/email.png" alt="">
+                    Gmail
+                </a>
+        
+                <a href="https://www.linkedin.com/in/mukanmiras/"
+                   class="socialNetworks-elements
+                          w-full max-w-xs
+                          flex items-center justify-center gap-2
+                          md:w-auto md:justify-start"
+                   id="socialNetworks-element3">
+                    <img class="socialNetworks-logo" src="./public/img/linkedin.png" alt="">
+                    LinkedIn
+                </a>
+        
+                <a href="https://github.com/mvkanm"
+                   class="socialNetworks-elements
+                          w-full max-w-xs
+                          flex items-center justify-center gap-2
+                          md:w-auto md:justify-start
+                          text-light-lightText dark:text-dark-darkText"
+                   id="socialNetworks-element4">
+                    <img class="socialNetworks-logo" src="./public/img/github.png" alt="">
+                    GitHub
+                </a>
             </div>
-            <hr>
-         </section>
+        
+            <hr class="mt-6 mb-6 mx-auto w-4/5 h-px border-0 bg-light-lightBorder dark:bg-dark-darkBorder">
+        </section>
     </main>
-    <footer>© 2025 Mukan Miras</footer>
+    <footer class="text-light-lightText dark:text-dark-darkText text-center m-5 text-xs font-light">© 2025 Mukan Miras</footer>
 </body>
 </html>

@@ -1,79 +1,30 @@
-@import url(./components/navbar.css);
-@import url(./components/intro.css);
 @import url(./components/about.css);
 @import url(./components/experiences.css);
 @import url(./components/projects.css);
 @import url(./components/contacts.css);
-@import url(./components/footer.css);
 * {
     box-sizing: border-box;
-    transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
 }
-:root{
-    --text:    #1e1e1e;
-    --navbar:  #f9fafb;
-    --navbar-border: #e5e5e5;
-    --body:    #f2f4f8;
-    --border:  #e5e7eb;
-    --btn-color: #edf2f8;
-    --black: #000;
-    --white: #fff;
-    --links: #1e1e1e;
-    --facts-about-me: #edf2f838;
-    --facts-about-me-hover: #00000012;
-}
-.dark {
-    --text:    #cecece;
-    --navbar:  #151517;        
-    --navbar-border: #70707016;
-    --body:    #000000;        
-    --border:  #6e6e6e41;
-    --btn-color: #2b2c30;      
-    --black: #fff;             
-    --white: #151517;
-    --links: #cecece;
-    --facts-about-me: #ffffff12;
-    --facts-about-me-hover: #ffffff1f;
+html, body {
+    overflow-x: hidden;
 }
 body {
     margin: 0px;
-    background-color: var(--body);
     font-family: "Elms Sans", sans-serif;
 }
 h1{
-    color: var(--text);
+    text-align: center;
+
 }
 h2{
-    color: var(--text);
-}
-h3{
-    color: var(--text);
+    text-align: center;
+    letter-spacing: 0.1em;
 }
 a{
     text-decoration: none;
-    color: var(--links);
-}
-p{
-    color: var(--text);
-}
-section {
-    padding: 120px 25%
-}
-summary{
-    color: var(--text);
 }
 html {
     scroll-behavior: smooth;
-}
-hr {
-    margin: 24px auto 0;
-    width: 80%;
-    height: 1px;
-    border: none;
-    background-color: var(--border);
 }
 span{
     user-select: none;
