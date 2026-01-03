@@ -25,9 +25,7 @@
 #socialNetworks-element1 img{
     filter: invert(1);
 }
-.dark #socialNetworks-element1{
-    color: var(--black);
-}
+
 #socialNetworks-element1{
     background: linear-gradient(
     45deg,
@@ -37,35 +35,30 @@
     #962fbf,
     #4f5bd5
   );
-    color: var(--white);
+    color: white;
 }
 #socialNetworks-element2 img{
     filter: invert(1);
 }
-.dark #socialNetworks-element2{
-    color: var(--black);
-}
 #socialNetworks-element2{
     background-color: #e53e3e;
-    color: var(--white);
+    color: white;
 }
 #socialNetworks-element3 img{
     filter: invert(1);
 }
-.dark #socialNetworks-element3{
-    color: var(--black);
-}
 #socialNetworks-element3{
     background-color: #01a0dc;
-    color: var(--white);
+    color: white;
 }
 #socialNetworks-element4 img{
     filter: invert(1);
 }
-.dark #socialNetworks-element4 img{
-    filter: invert(0);
+.dark #socialNetworks-element4{
+    background-color: #151517;
+    color: white;
 }
 #socialNetworks-element4{
-    background-color: var(--black);
-    color: var(--white);
+    background-color: black;
+    color: white;
 }
