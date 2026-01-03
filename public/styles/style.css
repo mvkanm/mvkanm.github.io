@@ -10,6 +10,11 @@ html, body {
     min-height: 100%;
     /* background-color: black; */
 }
+html,
+body,
+main {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
 body {
     margin: 0px;
     font-family: "Elms Sans", sans-serif;
